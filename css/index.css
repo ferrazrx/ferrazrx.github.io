@@ -13,6 +13,10 @@ body {
 background-color: rgba(	0,128,0, 0.5);
 }
 
+.panel-body{
+  transition: display .3s easy-in;
+}
+
 .subtopic {
   background-color: rgba(	0,128,0, 0.2);
   padding-left: 15px;

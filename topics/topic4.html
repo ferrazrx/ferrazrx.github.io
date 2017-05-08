@@ -124,13 +124,11 @@
                 //Heading
                 var p = document.createElement('div');
                 p.setAttribute("class", "panel-heading")
-                p.onclick = function(){
+                p.onmouseover = function(){
                   var nonSelected = document.querySelectorAll('.panel-body');
                   nonSelected.forEach(function(item){
                     item.style.display = 'none';
                   });
-
-
                   document.getElementById(user.id).style.display = 'block';
                 }
                 p.innerHTML = user.name;
@@ -140,7 +138,8 @@
                 b.setAttribute('class', 'panel-body');
                 b.setAttribute('id', user.id);
                 b.innerHTML = user.website;
-                b.style.display = 'none'
+                b.style.display = 'none';
+                b.style.transition = 'display .7s easy-in';
 
                 //Send to HTML
                 document.getElementById('ajax').appendChild(p);
@@ -148,6 +147,7 @@
               });
             });
           };
+
 
         </pre>
       </div>
