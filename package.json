@@ -1,0 +1,23 @@
+{
+  "name": "ferrazrx.github.io",
+  "version": "1.0.0",
+  "description": "CIT 261 website for examples",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ferrazrx/ferrazrx.github.io.git"
+  },
+  "keywords": [
+    "CIT",
+    "261"
+  ],
+  "author": "Rafael Ferraz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ferrazrx/ferrazrx.github.io/issues"
+  },
+  "homepage": "https://github.com/ferrazrx/ferrazrx.github.io#readme"
+}
