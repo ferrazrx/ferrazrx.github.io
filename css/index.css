@@ -4,6 +4,12 @@ body {
   padding-bottom: 20px;
 }
 
+.done{
+  background-color: rgba(	0,128,0, 0.3);
+  padding: 5px;
+  margin: 2px;
+}
+
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
 .marketing,
