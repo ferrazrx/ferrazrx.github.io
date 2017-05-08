@@ -29,7 +29,7 @@
         <nav>
           <ul class="nav nav-pills pull-right">
             <li role="presentation" class="active"><a href="#">Home</a></li>
-            <li role="presentation"><a href="#topics">Topics</a></li>
+            <li role="presentation"><a id="scroll" href="#topics">Topics</a></li>
             <li role="presentation"><a href="#">Contact</a></li>
           </ul>
         </nav>
@@ -41,30 +41,39 @@
         <h2>BYU | CIT 261</h2>
         <p class="lead">
           Spring 2017<br /> <strong>Student:</strong> Rafael Ferraz<br /><strong>Instructor:</strong> Gary James </p>
-        <p><a class="btn btn-lg btn-success" href="https://byui.brightspace.com" role="button">Go to BYU Page</a></p>
+        <p><a class="btn btn-lg btn-success" target='_blank' href="https://byui.brightspace.com" role="button">Go to BYU Page</a></p>
       </div>
 
       <div class="row marketing" id='topics'>
         <div class="col-lg-6">
-          <div class='done'>
-            <h4>Topic 1</h4>
-            <p>Loops, Conditional Statements, Functions, Variables, Parameters, Arrays, Associative Arrays</p>
-          </div>
 
+          <a class='none' href='topics/topic1.html'>
+            <div class='done'>
+              <h4>Topic 1</h4>
+              <p>Loops, Conditional Statements, Functions, Variables, Parameters, Arrays, Associative Arrays</p>
+            </div>
+          </a>
+
+          <a class='none' href='topics/topic2.html'>
           <div class='done'>
             <h4>Topic 2 </h4>
             <p>Object Creation Functions, Inheritance, Properties, Methods, Instantiation</p>
           </div>
+          </a>
 
-          <div class='done'>
-          <h4>Topic 3</h4>
-          <p>JSON Parse, Stringify</p>
-          </div>
+          <a class='none' href='topics/topic3.html'>
+            <div class='done'>
+            <h4>Topic 3</h4>
+            <p>JSON Parse, Stringify</p>
+            </div>
+          </a>
 
-          <div class='done'>
-          <h4>Topic 4</h4>
-          <p>Using XMLHTTPRequest to Consume a JSON Web Service</p>
-          </div>
+          <a class='none' href='topics/topic4.html'>
+            <div class='done'>
+            <h4>Topic 4</h4>
+            <p>Using XMLHTTPRequest to Consume a JSON Web Service</p>
+            </div>
+          </a>
 
           <h4>Topic 5</h4>
           <p>Local Storage API, Storing and Retrieving Simple Data, Arrays, Associative Arrays, and Objects</p>
@@ -109,7 +118,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="css/bootstrap/js/bootstrap.min.js"></script>
     <script>
-      $(document).on('click', 'a', function(event){
+      $(document).on('click', '#scroll', function(event){
       event.preventDefault();
 
       $('html, body').animate({
