@@ -52,9 +52,12 @@ function ajax(){
       p.onmouseover = function(){
         var nonSelected = document.querySelectorAll('.panel-body');
         nonSelected.forEach(function(item){
-          item.style.display = 'none';
+          item.classList.remove('Apper');
+          item.classList.add('noApper');
+          console.log(item.classList);
         });
-        document.getElementById(user.id).style.display = 'block';
+        document.getElementById(user.id).classList.remove('noApper');
+        document.getElementById(user.id).classList.add('Apper');
       }
       p.innerHTML = user.name;
 
@@ -64,8 +67,7 @@ function ajax(){
       b.setAttribute('id', user.id);
 
       b.innerHTML = user.website;
-      b.style.display = 'none';
-      b.style.transition = 'display .7s easy-in';
+      b.classList.add('noApper');
 
       //Send to HTML
       document.getElementById('ajax').appendChild(p);

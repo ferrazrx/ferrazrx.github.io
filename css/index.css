@@ -13,9 +13,30 @@ body {
 background-color: rgba(	0,128,0, 0.5);
 }
 
-.panel-body{
-  transition: display .3s easy-in;
+.font-light{
+  font-weight: 100;
 }
+.list{
+  display: block;
+  font-weight: 900;
+  margin-top: 3px;
+}
+
+.noApper {
+  height: 0px;
+  padding: 0px;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.Apper{
+  height: 40px;
+  visibility: visible;
+  opacity: 1;
+  transition: all .8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+
 
 .subtopic {
   background-color: rgba(	0,128,0, 0.2);
@@ -33,7 +54,7 @@ background-color: rgba(	0,128,0, 0.5);
 .subtopic>h2 {
   font-weight: 900;
 }
-.subtopic>button{
+.subtopic button{
 
       background-color: #4CAF50; /* Green */
       border: none;

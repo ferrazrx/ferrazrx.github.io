@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="CIT 261 codes">
+    <meta name="author" content="Rafael Ferraz">
+    <link rel="icon" href="favicon.ico">
+
+    <title>CIT 261| Topic 6</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/index.css"  />
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <!-- Code pretty -->
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  </head>
+
+  <body>
+
+    <div class="container">
+      <div class="header clearfix">
+        <nav>
+          <ul class="nav nav-pills pull-right">
+            <li role="presentation" ><a href="../index.html">Home</a></li>
+            <li role="presentation" class="active"><a href="#">Topics</a></li>
+            <li role="presentation"><a href="#">Contact</a></li>
+          </ul>
+        </nav>
+        <h3 class="text-muted">CIT 261 | Rafael Ferraz</h3>
+      </div>
+
+      <!--Content -->
+      <div class="page-header">
+        <h1>Topic 6 <small>DOM Manipulation Using createElement, appendChild, insertBefore, removeChild, etc.</small></h1>
+      </div>
+      <div class="jumbotron">
+        <div class="row marketing">
+          <div class='col-lg-6'>
+          <a class='none' href='presentations/Week 3 - Topic 6.pptx'>
+            <img src='img/ppt.png' alt='presentation' />
+            <h3>Topic Presentation</h3>
+          </a>
+          </div>
+          <div class='col-lg-6'>
+            <a class='none' href='https://www.youtube.com/watch?v=15NcYzguiX4' target='_blank'>
+              <img src='img/video.png' alt='presentation' />
+              <h3>Video Presentation</h3>
+            </a>
+          </div>
+        </div>
+      </div>
+
+        <div class='subtopic'>
+          <h2>DOM Manipulations</h2>
+          <article class="panel panel-default">
+          </article>
+          <span class='list'>1.</span><button id='button'>Click here to create elements in the DOM</button><br />
+          <span class='list'>2.</span><button id='button2'>Click here to remove elements in the DOM</button><br />
+        </div>
+
+
+        <h2>Code used in this Topic:</h2>
+        <pre class="prettyprint">
+          //HTML DOM
+            //HTML DOM EventListener
+            document.getElementById("button").addEventListener("click", display);
+            document.getElementById("button2").addEventListener("click", remove);
+
+            var text1 = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sagittis arcu sed gravida condimentum. Praesent efficitur, ex et posuere efficitur, ex augue fermentum lacus, interdum mattis nisl sapien ac turpis. Nunc dictum elit vitae dictum mattis. Aenean tristique imperdiet ex, sed imperdiet nunc hendrerit et. Pellentesque convallis tempus justo at volutpat. Donec pharetra efficitur auctor. Duis in feugiat magna, dapibus rhoncus tortor. Sed scelerisque, sem a lacinia egestas, purus nunc iaculis arcu, in imperdiet lacus purus at urna. Etiam orci mi, euismod vel tincidunt in, dapibus at diam. Pellentesque at neque at lacus varius finibus sed ac lorem. Nullam nec tortor a odio dictum molestie et eu odio. Aliquam tristique, tortor ut congue luctus, libero lacus ultrices mauris, et eleifend risus magna in erat. Vestibulum vel sagittis eros. Nunc eget dapibus libero. Nam lacinia ultrices consectetur. Integer in venenatis felis. Mauris lacinia sapien id quam semper lobortis. Praesent lobortis et tellus eget accumsan. Nam non justo lorem. Praesent sit amet scelerisque neque. Vestibulum euismod libero vitae ligula vulputate sodales. Quisque sed sagittis velit, vel venenatis libero. Nulla et tincidunt orci, et tincidunt tortor.";
+
+            var text2 = 'Aliquam aliquet sem id feugiat cursus. Aenean interdum iaculis mattis. Integer sagittis sagittis urna at ultricies. Sed a iaculis dolor. Proin eu viverra diam, quis gravida est. Nunc mattis commodo cursus. Morbi elementum arcu enim, nec lacinia est gravida a. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere elementum nisi, consectetur porttitor purus pulvinar a. Ut ante lacus, lacinia nec venenatis vitae, molestie in est. In hac habitasse platea dictumst. Vivamus elit lorem, bibendum sed dignissim in, tempus id odio.';
+            //document.getElementsByTagName
+            function display(){
+              //Creating Elements
+              var p = document.createElement('p');
+              var p2 = document.createElement('p');
+              //Inner HTML
+              p.innerHTML = text1;
+              p2.innerHTML = text2;
+              //Style elements
+              p.style.color = "blue";
+              p2.style.color = "red";
+              //Seting new attributes
+              var article = document.getElementsByTagName('article');
+              article[0].setAttribute('class', 'font-light');
+              //Appending the element
+              article[0].appendChild(p);
+              article[0].appendChild(p2);
+            }
+
+            function remove(){
+              var article = document.getElementsByTagName('article');
+              console.log(article[0]);
+              //removing elements
+              //In the HTML DOM (Document Object Model), everything is a node:
+              //The document itself is a document node
+              //All HTML elements are element nodes
+              //All HTML attributes are attribute nodes
+              //Text inside HTML elements are text nodes
+              //Comments are comment nodes
+
+              article[0].removeChild(article[0].childNodes[2]);
+            }
+
+        </pre>
+      </div>
+
+
+
+      <footer class="footer">
+        <p>Rafael Ferraz &copy; 2017 Company, Inc.</p>
+      </footer>
+
+    </div> <!-- /container -->
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../css/bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/topic6.js"></script>
+  </body>
+</html>

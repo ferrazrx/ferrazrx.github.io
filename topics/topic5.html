@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="CIT 261 codes">
+    <meta name="author" content="Rafael Ferraz">
+    <link rel="icon" href="favicon.ico">
+
+    <title>CIT 261| Topic 5</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/index.css"  />
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <!-- Code pretty -->
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  </head>
+
+  <body>
+
+    <div class="container">
+      <div class="header clearfix">
+        <nav>
+          <ul class="nav nav-pills pull-right">
+            <li role="presentation" ><a href="../index.html">Home</a></li>
+            <li role="presentation" class="active"><a href="#">Topics</a></li>
+            <li role="presentation"><a href="#">Contact</a></li>
+          </ul>
+        </nav>
+        <h3 class="text-muted">CIT 261 | Rafael Ferraz</h3>
+      </div>
+
+      <!--Content -->
+      <div class="page-header">
+        <h1>Topic 5 <small>Local Storage API, Storing and Retrieving Simple Data, Arrays, Associative Arrays, and Objects</small></h1>
+      </div>
+      <div class="jumbotron">
+        <div class="row marketing">
+          <div class='col-lg-6'>
+          <a class='none' href='presentations/Week 3 - Topic 5.pptx'>
+            <img src='img/ppt.png' alt='presentation' />
+            <h3>Topic Presentation</h3>
+          </a>
+          </div>
+          <div class='col-lg-6'>
+            <a class='none' href='https://www.youtube.com/watch?v=15NcYzguiX4' target='_blank'>
+              <img src='img/video.png' alt='presentation' />
+              <h3>Video Presentation</h3>
+            </a>
+          </div>
+        </div>
+      </div>
+
+        <div class='subtopic'>
+          <h2>Local Storage</h2>
+          <div id='localStorage' class="panel panel-default">
+            <input id='name' type="text" value="" placeholder="First Name"/>
+            <input id='surname' type="text" value=""  placeholder="Last Name"/>
+          </div>
+          <button id='button'>GO TO ANOTHER PLANET!</button>
+          <button id='button2'>GET MESSAGE FROM THE PLANET</button>
+        </div>
+
+
+        <div class='subtopic'>
+          <h2>Session Storage</h2>
+          <div id='sessionStorage' class="panel panel-default">
+          </div>
+          <button id='button'>Click </button>
+        </div>
+
+        <h2>Code used in this Topic:</h2>
+        <pre class="prettyprint">
+          Example 1
+          document.getElementById('button').addEventListener('click', newWindow);
+          document.getElementById('button2').addEventListener('click', message);
+
+          function newWindow() {
+
+            var name = document.getElementById('name').value || "unknown";
+            var surname = document.getElementById('surname').value || "";
+
+            var obj = {
+               name: name,
+               surname: surname
+            }
+            var json = JSON.stringify(obj);
+
+          localStorage.setItem('data', json);
+
+           var newPage = window.open();
+           newPage.document.open();
+           newPage.document.write(
+             <!DOCTYPE html "+"<html lang='en'>+
+             "head>"+
+               "meta charset='utf-8'>"+
+               "meta http-equiv='X-UA-Compatible' content='IE=edge'>"+
+               "meta name='viewport' content='width=device-width, initial-scale=1'>"+
+               "<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->"+
+               "meta name='description' content='CIT 261 codes'>"+
+               "meta name='author' content='Rafael Ferraz'>"+
+               "link rel='icon' href='favicon.ico'>"+
+               "title>CIT 261| New Page Created with JS/title>"+
+               "/head>"+
+               "body>"+
+               "script>"+
+               "var div = document.createElement('div');" +
+               "var h1 = document.createElement('h1');"+
+               "var h3 = document.createElement('h3');"+
+               "h3.innerHTML ='Close your browser and get the message from the planet on previous webpage!' ;"+
+               "var p = document.createElement('p');"+
+               "p.innerHTML ='"+ name +" "+ surname +", welcome! This planet was created by our mighty master programmer! He used JavaScript as his main material!"+
+               "My master send me this message:"+ localStorage.getItem('data') +", I do not know what it means, but I will keep it. It must be important!  I will keep it even if you close your browser!';"+
+               "h1.innerHTML = 'Hello "+ name +" to the white Planet!';"+
+               "div.appendChild(h1);" +
+               "div.appendChild(p);"+
+               "div.appendChild(h3);"+
+               "document.getElementsByTagName('body')[0].appendChild(div);"+
+               "console.log(Storage);"+
+               "/script>"+
+               "/body>");
+           newPage.document.close();
+          }
+
+          function message(){
+            var json = localStorage.getItem('data');
+            if(json === null){
+                document.getElementById('localStorage').innerHTML = "Sorry you didn't visit our planet yet! Give it a try!"
+            }
+
+            var obj = JSON.parse(json);
+            document.getElementById('localStorage').innerHTML = "We know who you are " + obj.name + " " + obj.surname +"! We are watching you!";
+
+          }
+
+        </pre>
+      </div>
+
+
+
+      <footer class="footer">
+        <p>Rafael Ferraz &copy; 2017 Company, Inc.</p>
+      </footer>
+
+    </div> <!-- /container -->
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../css/bootstrap/js/bootstrap.min.js"></script>
+
+    <script src="js/topic5.js"></script>
+  </body>
+</html>
