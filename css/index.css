@@ -9,6 +9,90 @@ body {
   padding: 5px;
   margin: 2px;
 }
+
+@keyframes bobble {
+  0%{
+    transform: translate3d(0px,0px,0px);
+    animation-timing-function: ease-in;
+  }
+  20%{
+    transform: translate3d(50px,10px,0px);
+    animation-timing-function: ease-out;
+  }
+  40%{
+    transform: translate3d(80px,15px,0px);
+    animation-timing-function: ease-in;
+  }
+  60%{
+    transform: translate3d(40px,10px,0px);
+    animation-timing-function: ease-out;
+  }
+  80%{
+    transform: translate3d(20px,5px,0px);
+    animation-timing-function: ease-in;
+  }
+  100%{
+    transform: translate3d(0px,0px,0px);
+    animation-timing-function: ease-out;
+  }
+}
+
+@keyframes pass {
+  0%{
+    transform: translate3d(-200px,0px,0px);
+  }
+  80%{
+    transform: translate3d(700px,0px,0px);
+  }
+  81%{
+    transform: translate3d(700px,-200px,0px);
+  }
+  82%{
+    transform: translate3d(-200px,-200px,0px);
+  }
+  83%{
+    transform: translate3d(-200px,0px,0px);
+  }
+  100%{
+    transform: translate3d(0px,0px,0px);
+  }
+
+}
+
+@keyframes flight {
+  0%{
+    transform: translate3d( 650px,0px,0px);
+    animation-timing-function: ease-in;
+  }
+  100%{
+    transform: translate3d(-1800px,-250px,0px);
+    animation-timing-function: ease-out;
+  }
+}
+
+.cloud{
+  display: block;
+  position: absolute;
+  max-width: 150px;
+  animation: bobble 6s infinite;
+}
+.sun{
+  display: block ;
+  max-width: 180px;
+  animation: pass 8s;
+}
+.helicopter {
+  position: absolute;
+  animation: flight 5s infinite;
+  display: block;
+  top: 100px;
+  max-width: 400px;
+}
+.undone{
+  background-color: rgba(	128,0,0, 0.3);
+  padding: 5px;
+  margin: 2px;
+}
 .done:hover{
 background-color: rgba(	0,128,0, 0.5);
 }
