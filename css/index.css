@@ -15,6 +15,7 @@ body {
   display: none;
 }
 
+
 .flex{
   display: flex;
   align-items: center;
@@ -146,16 +147,18 @@ body {
   background-color: rgba(	128,0,0, 0.3);
   padding: 5px;
   margin: 2px;
+  transform: scale(1);
   transition: all 0.6s;
 }
 
 .undone:hover {
 background-color: rgba(	129,,0, 0.5);
- margin: 4px;
+ transform: scale(1.1);
  cursor: no-drop;
 }
 
 .done{
+  transform: scale(1);
   background-color: rgba(	0,128,0, 0.3);
   padding: 5px;
   margin: 2px;
@@ -163,8 +166,66 @@ background-color: rgba(	129,,0, 0.5);
 }
 .done:hover{
     background-color: rgba(	0,128,0, 0.5);
-    margin: 4px;
+    transform: scale(1.1);
   }
+
+.effect{
+  width: 400px;
+  height: 400px;
+  overflow: hidden;
+  border: black solid;
+  margin-left: auto;
+  margin-right: auto;
+}
+.effect{
+  width: 400px;
+  height: 400px;
+  overflow: hidden;
+  border: black solid;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@keyframes effect {
+    0% {
+      transform: translate3d(0,-250px,0);
+      opacity: 0;
+    }
+    5% {
+      opacity: 1;
+    }
+    95% {
+        transform: scale3d(1.5, 1.5, 1.5) translate3d(-360px, -150px, 0px);
+        animation-timing-function: ease-in;
+        opacity: 1;
+    }
+    100% {
+        transform: scale3d(2.5, 2.5, 2.5) translate3d(-170px, -100px, 0px);
+        opacity: 0;
+    }
+}
+
+
+.effectImage {
+  display: absolute;
+  animation: effect 6s infinite;
+}
+
+.toCircle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 200px;
+  border-radius: 0px;
+  background-color: rgba(255, 0, 0, 0.3);
+  transition: all .5s ease-out;
+  margin-left: auto;
+  margin-right: auto;
+}
+.toCircle:hover {
+  border-radius: 50%;
+  background-color: rgba(255, 255, 0, 0.5);
 }
 
 .font-light{
@@ -222,11 +283,35 @@ background-color: rgba(	129,,0, 0.5);
   background-color: #005A31;
 }
 
+.transition {
+  width: 150px;
+  overflow: hidden;
+  margin-left: auto;
+  margin-right: auto;
+}
+.transitionImage{
+  transform: translate3d(0,0,0);
+  transition: transform 1s cubic-bezier(0,1.66,.83,.76);
+}
+.transitionImage:hover{
+  transform: translate3d(-150px,0,0);
+}
+
+.sky {
+  position: relative;
+  background-color: #A2BFCE;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  border-radius: 4px;
+  padding: 10px;
+}
 #sideMenu{
   position: fixed;
+  display: block;
   left: 0;
   top: 0;
-  width: 50%;
+  width: 30%;
   height: 100%;
   transform: translate3d(-100vw,0,0);
   background: #232526;  /* fallback for old browsers */

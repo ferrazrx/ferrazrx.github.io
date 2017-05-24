@@ -6,7 +6,15 @@ window.onload = function (){
 document.getElementById('button').addEventListener('click', createCloud);
 document.getElementById('button2').addEventListener('click', createSun);
 document.getElementById('button3').addEventListener('click', createHelicopter);
+document.getElementById('button4').addEventListener('click', turnNight);
 
+function turnNight() {
+  var sky = document.getElementsByClassName('sky')[0];
+  sky.style.transition = 'background-color 2s ';
+  sky.style.backgroundColor = "#1f263b";
+  var sun = document.getElementsByClassName('sun')[0];
+  sun.setAttribute('src', 'img/moon.png')
+}
 
 function createCloud(){
   var y = Math.abs(Math.random()*300);

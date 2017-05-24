@@ -64,13 +64,14 @@
 
 
           <h2>Clouds in the Sky!</h2>
-          <div id="sky" style="position: relative;background-color: #A2BFCE; width: 100%; height: 300px; overflow: hidden; border-radius: 4px; padding: 10px">
+          <div id="sky" class='sky'>
           </div>
 
           <div class='subtopic'>
             <button id="button">Click here to create a cloulds!</button><br /><span>Create as much as you like!</span><br /><br />
             <button id="button2">Click here to create a sun!</button><br /><br />
-            <button id="button3">Click here to create a helicopter!</button>
+            <button id="button3">Click here to create a helicopter!</button><br /><br />
+            <button id="button4">Click here to turn night!</button>
           </div>
 
         <h2>Code used in this Topic:</h2>
@@ -148,6 +149,15 @@
             max-width: 180px;
             animation: pass 8s;
           }
+          .sky {
+            position: relative;
+            background-color: #A2BFCE;
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+            border-radius: 4px;
+            padding: 10px;
+          }
           .helicopter {
             position: absolute;
             animation: flight 5s infinite;
@@ -160,7 +170,15 @@
           document.getElementById('button').addEventListener('click', createCloud);
           document.getElementById('button2').addEventListener('click', createSun);
           document.getElementById('button3').addEventListener('click', createHelicopter);
+          document.getElementById('button4').addEventListener('click', turnNight);
 
+          function turnNight() {
+            var sky = document.getElementsByClassName('sky')[0];
+            sky.style.transition = 'background-color 2s ';
+            sky.style.backgroundColor = "#1f263b";
+            var sun = document.getElementsByClassName('sun')[0];
+            sun.setAttribute('src', 'img/moon.png')
+          }
 
           function createCloud(){
             var y = Math.abs(Math.random()*300);
@@ -193,9 +211,9 @@
             sun.src = "img/helicopter.gif";
             sun.setAttribute('class', 'helicopter');
             sky.appendChild(sun);
-            document.getElementById('button3').style.display = 'none';
 
           }
+
         </pre>
       </div>
 
