@@ -4,10 +4,68 @@ body {
   padding-bottom: 20px;
 }
 
+.se-pre-con {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+	background: url(../topics/img/loader.gif) center no-repeat #fff;
+  display: none;
+}
+
 .done{
   background-color: rgba(	0,128,0, 0.3);
   padding: 5px;
   margin: 2px;
+}
+
+.flex{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #74AFAD;
+}
+
+.left{
+  transition: all 1s;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: #7E8F7C;
+}
+
+.right{
+  transition: all 1s;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  background-color: #3B3738;
+}
+.up{
+  transition: all 1s;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  background-color: #CBE32D;
+}
+
+.down{
+  transition: all 1s;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  background-color: #FFF056;
+}
+.background{
+  width:480px;
+  height: 320px;
+  background-image: url('../topics/img/fig.gif');
+
+}
+.background2{
+  background-image: url('../topics/img/giphy.gif');
 }
 
 @keyframes bobble {
@@ -67,6 +125,7 @@ body {
   100%{
     transform: translate3d(-1800px,-250px,0px);
     animation-timing-function: ease-out;
+
   }
 }
 
@@ -83,10 +142,11 @@ body {
 }
 .helicopter {
   position: absolute;
-  animation: flight 5s infinite;
+  animation: flight 5s;
   display: block;
   top: 100px;
   max-width: 400px;
+  animation-fill-mode: forwards;
 }
 .undone{
   background-color: rgba(	128,0,0, 0.3);
@@ -120,8 +180,6 @@ background-color: rgba(	0,128,0, 0.5);
   transition: all .8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
-
-
 .subtopic {
   background-color: rgba(	0,128,0, 0.2);
   padding-left: 15px;
@@ -150,6 +208,38 @@ background-color: rgba(	0,128,0, 0.5);
       font-size: 12px;
 
 }
+
+#sideMenu{
+  position: fixed;
+  left: 0;
+  top: 0;
+  transform: translate3d(-100vw,0,0);
+  width: 50%;
+  height: 100%;
+  background: #232526;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #414345, #232526);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #414345, #232526); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  transition: transform .4s cubic-bezier(0, .52, 0, 1);
+
+}
+#sideMenu.visible {
+  transform: rotate3d(0vw,0,0);
+}
+
+#sideMenu h2 a {
+  #flyoutMenu h2 a {
+    color: #FFF;
+    margin-left: 15px;
+    text-decoration: none;
+}
+}
+.buttonCircle{
+  max-width: 50px;
+}
+.buttonCircle:hover{
+  transform: scale3d(1.2,1.2,1.2);
+}
+
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,

@@ -34,6 +34,5 @@ function createHelicopter(){
   sun.src = "img/helicopter.gif";
   sun.setAttribute('class', 'helicopter');
   sky.appendChild(sun);
-  document.getElementById('button3').style.display = 'none';
 
 }

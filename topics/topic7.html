@@ -48,7 +48,7 @@
       <div class="jumbotron">
         <div class="row marketing">
           <div class='col-lg-6'>
-          <a class='none' href='presentations/Week 5 - Topic 7.pptx'>
+          <a class='none' href='#'>
             <img src='img/ppt.png' alt='presentation' />
             <h3>Topic Presentation</h3>
           </a>
@@ -62,15 +62,128 @@
         </div>
       </div>
 
-        <div class='subtopic'>
-          <h2></h2>
+      <h1>Example 1</h1>
+      <div class="background background2">
 
+      </div>
+      <div class='subtopic'>
+        <button id="button">Click to remove the Class!</button>
+        <button id="button2">Click to add the Class!</button>
+      </div>
+
+        <h1>Example 2</h1>
+        <h2>Move the element and change the class!</h2>
+        <div id="square" class="flex" style ='width: 100%; height: 400px; position: relative; border-radius: 5px;'>
+          <div id='ball' style = 'font-weight: 900; display: flex; align-items: center; justify-content: center; background-color: #D9853B; width: 100px ; height: 100px; border-radius: 50%; position: absolute'>
+            <p>Class:</p><br />
+            <p id ='className'>
+
+            </p>
+          </div>
         </div>
+        <div class='subtopic flex'>
+          <h1>Use your keyboard arrow to change the class! Press <strong>"a"</strong> to restore!</h1>
+          <img style="max-width:100px" src="https://img.clipartfest.com/8c68b3c4ae6ff0c7513f6048d7098fba_-guide-arrow-key-fix-arrow-keys-clipart_332-227.png" alt="keyboard" />
+        </div>
+
+
 
 
         <h2>Code used in this Topic:</h2>
         <pre class="prettyprint">
-          
+        //Example 1
+        document.getElementById('button').addEventListener('click', removeClass);
+        document.getElementById('button2').addEventListener('click', addClass);
+
+        function removeClass(){
+          var image = document.getElementsByClassName('background')[0];
+          image.classList.remove('background2');
+        }
+        function addClass(){
+          var image = document.getElementsByClassName('background')[0];
+          image.classList.add('background2');
+        }
+        *************************************************************************
+        
+        //Example 2
+        //css
+        .flex{
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-color: #74AFAD;
+        }
+
+        .left{
+          transition: all 1s;
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          background-color: #7E8F7C;
+        }
+
+        .right{
+          transition: all 1s;
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+          background-color: #3B3738;
+        }
+        .up{
+          transition: all 1s;
+          display: flex;
+          align-items: flex-start;
+          justify-content: center;
+          background-color: #CBE32D;
+        }
+
+        .down{
+          transition: all 1s;
+          display: flex;
+          align-items: flex-end;
+          justify-content: center;
+          background-color: #FFF056;
+        }
+
+        //Javascript
+        window.addEventListener("keydown", moveSomething, false);
+
+        function moveSomething(e) {
+            var ball = document.getElementById('square');
+            var className = document.getElementById('className')
+            switch(e.keyCode) {
+                case 65:
+                  ball.classList="";
+                  ball.classList.add('flex');
+                  className.innerHTML = "";
+                  break;
+                case 37:
+                    // left key pressed
+                    className.innerHTML = "Left";
+                    ball.classList="";
+                    ball.classList.add('left');
+                    break;
+                case 38:
+                    // up key pressed
+                    className.innerHTML = "Up";
+                    ball.classList="";
+                    ball.classList.add('up');
+                    break;
+                case 39:
+                    // right key pressed
+                    className.innerHTML = "Right";
+                    ball.classList="";
+                    ball.classList.add('right');
+                    break;
+                case 40:
+                    // down key pressed
+                    className.innerHTML = "Down";
+                    ball.classList="";
+                    ball.classList.add('down');
+                    break;
+            }
+        }
+
         </pre>
       </div>
 
@@ -87,6 +200,6 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="../css/bootstrap/js/bootstrap.min.js"></script>
-    <script src="js/topic6.js"></script>
+    <script src="js/topic7.js"></script>
   </body>
 </html>
