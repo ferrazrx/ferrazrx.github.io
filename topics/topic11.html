@@ -54,10 +54,11 @@
           </a>
           </div>
           <div class='col-lg-6'>
-            <a class='none' href='#' target='_blank'>
-              <img src='img/video.png' alt='presentation' />
-              <h3>Video Presentation</h3>
-            </a>
+            <img class='grayscale' src='img/video.png' alt='presentation' />
+            <h3>Video Presentation</h3>
+            <p>
+              Not Recorded!
+            </p>
           </div>
         </div>
       </div>
@@ -80,9 +81,78 @@
           Hover over this div!
         </p>
       </div>
+      <div class='subtopic'>
+        <h1>Example 3</h1>
+      </div>
+      <div class="spin">
+        <p style="font-weight: 900">
+          Hover over this div!
+        </p>
+      </div>
+      <div class='subtopic'>
+        <h1>Example 3</h1>
+      </div>
+        <img class='gray' style="display: block; max-width: 400px; border-radius: 6px; margin-left: auto; margin-right: auto;" src="img/friends.jpg" alt="">
+
+
 
         <h2>Code used in this Topic:</h2>
         <pre class="prettyprint">
+          //css
+          .transition {
+            width: 150px;
+            overflow: hidden;
+            margin-left: auto;
+            margin-right: auto;
+          }
+          .transitionImage{
+            transform: translate3d(0,0,0);
+            transition: transform 1s cubic-bezier(0,1.66,.83,.76);
+          }
+          .transitionImage:hover{
+            transform: translate3d(-150px,0,0);
+          }
+          .toCircle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 200px;
+            height: 200px;
+            border-radius: 0px;
+            background-color: rgba(255, 0, 0, 0.3);
+            transition: all .5s ease-out;
+            margin-left: auto;
+            margin-right: auto;
+          }
+          .toCircle:hover {
+            border-radius: 50%;
+            background-color: rgba(255, 255, 0, 0.5);
+          }
+          .gray{
+              -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+              filter: grayscale(100%);
+              transition: all .7s ease;
+          }
+          .gray:hover{
+            cursor: pointer;
+            -webkit-filter: grayscale(0%); /* Safari 6.0 - 9.0 */
+            filter: grayscale(0%);
+          }
+          //Javascript
+          var square = document.getElementsByClassName('spin')[0];
+          square.addEventListener('mouseover', spin);
+
+          function spin() {
+            count = 0;
+            var id = setInterval(rotate, 10);
+            function rotate(){
+              count++;
+              square.style.transform = 'rotateY('+count+'deg)'
+              if(count >= 360){
+                clearInterval(id);
+              }
+            }
+          };
 
         </pre>
       </div>
