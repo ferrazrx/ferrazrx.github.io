@@ -1,3 +1,8 @@
+window.onload = function (){
+  var spinner = document.getElementsByClassName("se-pre-con")[0];
+  spinner.style.display = 'none';
+};
+
 document.getElementById('button').addEventListener('click', createCloud);
 document.getElementById('button2').addEventListener('click', createSun);
 document.getElementById('button3').addEventListener('click', createHelicopter);
