@@ -24,7 +24,7 @@
 
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="js/topic11.js"></script>
+
   </head>
 
   <body>
@@ -64,21 +64,89 @@
       </div>
 
       <div id="sideMenu">
-
+        <div style="padding: 10px">
+          <h3 class="text-muted">CIT 261 | Rafael Ferraz</h3>
+          <h2><a href="#">Home</a></h2>
+          <h2><a href="#">About</a></h2>
+          <h2><a href="#">Contact</a></h2>
+          <h2><a href="#">Search</a></h2>
+          <img style="cursor: pointer; transform: scale3d(1.2,1.2,1.2); display: block; max-width: 50px; position: absolute; right: 5px; bottom:5px;" src="img/arrow.png" alt="return">
+        </div>
       </div>
-
-
 
           <div class='subtopic'>
             <img class="buttonCircle" src="https://image.flaticon.com/icons/png/512/336/336206.png" alt="button" />
-            <p>
+            <p style="text-align:center">
               Click in the button above to open the side menu.
             </p>
           </div>
 
         <h2>Code used in this Topic:</h2>
         <pre class="prettyprint">
+          //css
+          #sideMenu{
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 50%;
+            height: 100%;
+            transform: translate3d(-100vw,0,0);
+            background: #232526;  /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #414345, #232526);  /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #414345, #232526); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
+          }
+
+          @keyframes open {
+            0%{
+              transform: translate3d(-100vw,0,0);
+              animation-timing-function: ease-in-out;
+            }
+            100%{
+              transform: translate3d(0vw,0,0);
+              animation-timing-function: ease-in-out;
+            }
+          }
+
+          @keyframes close {
+            0%{
+              transform: translate3d(0vw,0,0);
+              animation-timing-function: ease-in-out;
+            }
+            100%{
+              transform: translate3d(-100vw,0,0);
+              animation-timing-function: ease-in-out;
+            }
+          }
+
+          #sideMenu.show {
+            animation: open 1s;
+            animation-fill-mode: both;
+          }
+          #sideMenu.close{
+            animation: close 1s;
+            animation-fill-mode: both;
+          }
+
+          //Javascript
+          window.onload = function (){
+            var spinner = document.getElementsByClassName("se-pre-con")[0];
+            spinner.style.display = 'none';
+          }
+          var button = document.getElementsByClassName('buttonCircle')[0];
+          button.addEventListener('click', show);
+
+          var menu = document.getElementById('sideMenu');
+          menu.addEventListener('click', close);
+
+          function show(){
+            menu.classList="";
+            menu.classList.add('show');
+          }
+          function close(){
+            menu.classList="";
+            menu.classList.add('close');
+          }
         </pre>
       </div>
 
@@ -95,5 +163,6 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="../css/bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/topic13.js"></script>
   </body>
 </html>

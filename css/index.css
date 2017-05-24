@@ -15,12 +15,6 @@ body {
   display: none;
 }
 
-.done{
-  background-color: rgba(	0,128,0, 0.3);
-  padding: 5px;
-  margin: 2px;
-}
-
 .flex{
   display: flex;
   align-items: center;
@@ -152,9 +146,25 @@ body {
   background-color: rgba(	128,0,0, 0.3);
   padding: 5px;
   margin: 2px;
+  transition: all 0.6s;
+}
+
+.undone:hover {
+background-color: rgba(	129,,0, 0.5);
+ margin: 4px;
+ cursor: no-drop;
+}
+
+.done{
+  background-color: rgba(	0,128,0, 0.3);
+  padding: 5px;
+  margin: 2px;
+  transition: all 0.6s;
 }
 .done:hover{
-background-color: rgba(	0,128,0, 0.5);
+    background-color: rgba(	0,128,0, 0.5);
+    margin: 4px;
+  }
 }
 
 .font-light{
@@ -197,7 +207,6 @@ background-color: rgba(	0,128,0, 0.5);
   font-weight: 900;
 }
 .subtopic button{
-
       background-color: #4CAF50; /* Green */
       border: none;
       color: white;
@@ -206,39 +215,69 @@ background-color: rgba(	0,128,0, 0.5);
       text-decoration: none;
       display: inline-block;
       font-size: 12px;
+      transition: all .6s;
+}
 
+.subtopic button:hover {
+  background-color: #005A31;
 }
 
 #sideMenu{
   position: fixed;
   left: 0;
   top: 0;
-  transform: translate3d(-100vw,0,0);
   width: 50%;
   height: 100%;
+  transform: translate3d(-100vw,0,0);
   background: #232526;  /* fallback for old browsers */
   background: -webkit-linear-gradient(to right, #414345, #232526);  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to right, #414345, #232526); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  transition: transform .4s cubic-bezier(0, .52, 0, 1);
 
 }
-#sideMenu.visible {
-  transform: rotate3d(0vw,0,0);
+
+@keyframes open {
+  0%{
+    transform: translate3d(-100vw,0,0);
+    animation-timing-function: ease-in-out;
+  }
+  100%{
+    transform: translate3d(0vw,0,0);
+    animation-timing-function: ease-in-out;
+  }
 }
 
-#sideMenu h2 a {
-  #flyoutMenu h2 a {
-    color: #FFF;
-    margin-left: 15px;
-    text-decoration: none;
+@keyframes close {
+  0%{
+    transform: translate3d(0vw,0,0);
+    animation-timing-function: ease-in-out;
+  }
+  100%{
+    transform: translate3d(-100vw,0,0);
+    animation-timing-function: ease-in-out;
+  }
 }
+
+#sideMenu.show {
+  animation: open 1s;
+  animation-fill-mode: both;
 }
-.buttonCircle{
+#sideMenu.close{
+  animation: close 1s;
+  animation-fill-mode: both;
+}
+
+.buttonCircle {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  cursor: pointer;
   max-width: 50px;
 }
 .buttonCircle:hover{
   transform: scale3d(1.2,1.2,1.2);
 }
+
+
 
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
