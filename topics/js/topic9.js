@@ -11,6 +11,11 @@ window.addEventListener('load', function(){
         document.getElementById('quantity').innerHTML = 'You pressed ' + quantity + ' times!';
         e.preventDefault(); // prevent default click behavior
     }, false)
+    square.addEventListener('touchend', function(e){
+        var quantity = e.targetTouches.length; // reference first touch point
+        document.getElementById('quantity').innerHTML = 'You pressed ' + quantity + ' times!';
+        e.preventDefault(); // prevent default click behavior
+    }, false)
 
     box2.addEventListener('touchstart', function(e){
         touchobj = e.changedTouches[0]; // reference first touch point
