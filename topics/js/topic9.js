@@ -6,12 +6,18 @@ window.addEventListener('load', function(){
     dist = 0, // distance traveled by touch point
     touchobj = null; // Touch object holder
 
+    square.addEventListener('touchstart', function(e){
+        var quantity = e.changedTouches.length; // reference first touch point
+        document.getElementById('quantity').innerHTML = 'You pressed ' + quantity + ' times!';
+        e.preventDefault(); // prevent default click behavior
+    }, false)
+
     box2.addEventListener('touchstart', function(e){
-        var info = document.getElementById('box');
         touchobj = e.changedTouches[0]; // reference first touch point
         boxleft = parseInt(box2.style.left); // get left position of box
         startx = parseInt(touchobj.clientX); // get x coord of touch point
-        info.innerHTML = touchobj + '<br>' + boxleft + '<br>' + startx;
+        document.getElementById('h1').innerHTML = 'Touch Start';
+        document.getElementById('p').innerHTML = 'Touch Object:' + touchobj + '<br>' + "Left:" + boxleft + '<br>' + "ClientX:"+ startx;
         e.preventDefault(); // prevent default click behavior
     }, false)
 
