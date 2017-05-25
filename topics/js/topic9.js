@@ -6,7 +6,7 @@ window.addEventListener('load', function(){
     dist = 0, // distance traveled by touch point
     touchobj = null; // Touch object holder
 
-    square.addEventListener('touchstart', function(e){
+    square.addEventListener('touchenter', function(e){
         var quantity = e.changedTouches[].length; // reference first touch point
         document.getElementById('quantity').innerHTML = 'You pressed ' + quantity + ' times!';
         e.preventDefault(); // prevent default click behavior
