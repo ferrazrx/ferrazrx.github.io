@@ -70,9 +70,10 @@
       </div>
 
       <div class='subtopic'>
+		<h1>Example 2</h1>
         <div style="display: flex; flex-direction: row;">
           <div style="flex: 1">
-            <h1>Card Flip Y</h1>
+            <h3>Card Flip Y</h3>
             <div class="flipcontainer">
               <div class='card'>
                 <div class='face1'>
@@ -86,7 +87,7 @@
           </div>
 
           <div style="flex: 1">
-            <h1>Card Flip X</h1>
+            <h3>Card Flip X</h3>
             <div style="width: 200px; height: 250px; position:relative; perspective: 800px">
               <div id='hover' style="position:absolute; width: 100%; height: 100%; transition: transform 1s; backface-visibility: hidden; transform-style: preserve-3d">
                 <div style='display: flex; align-items: center; justify-content: center; color: white; font-size: 7em; font-weight: 900;position: absolute; background-color: green; width: 100%; height: 100%'>
@@ -100,6 +101,17 @@
 
           </div>
         </div>
+		</div>
+		
+		<div class='subtopic formActive'>
+			<h1> Example 3 </h1>
+			<form>
+				<label>Name:</label><input type="text" placeholder="Click here to type...">
+				<label>Email:</label><input type="text" placeholder="Click here to type...">
+			</form>
+		</div>
+		
+		
       <h2>Code used in this Topic:</h2>
       <pre class="prettyprint">
         document.getElementsByClassName('subtopic')[0].addEventListener('mouseover', increase);
