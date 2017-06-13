@@ -25,7 +25,6 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
-  </head>
 
   <body>
 
@@ -67,12 +66,66 @@
 
 
           <div class='subtopic'>
+            <h1>Video Tag</h1>
+            <div style="display: flex; flex-direction: row;">
+              <div style='flex: 1; text-align: center; border: 2px solid green; margin-right: 5px;'>
+                <h2>With Poster, With loop!</h2>
+                <video controls loop preload="auto" width="300px" height="300px" poster="img/lego-logo.svg">
+                  <source src="img/small.mp4" type="video/mp4" />
+                  <source src="img/small.webm" type="video/webm" />
+                  <source src="img/small.ogv" type="video/ogg" />
+                  <source src="img//small.flv" type="video/flv" />
+                  <source src="img/small.3gp" type="video/3gp" />
+                </video>
+              </div>
+              <div style='flex: 1; text-align: center; border: 2px solid green'>
+                <h2>No Poster, No loop!</h2>
+                <video controls preload="auto" width="300px" height="300px">
+                  <source src="img/small.mp4" type="video/mp4" />
+                  <source src="img/small.webm" type="video/webm" />
+                  <source src="img/small.ogv" type="video/ogg" />
+                  <source src="img//small.flv" type="video/flv" />
+                  <source src="img/small.3gp" type="video/3gp" />
+                  Your browser does not support the video element! Sorry!
+                </video>
+              </div>
+            </div>
+          </div>
+
+          <div class='subtopic'>
+            <h1>Simple Audio Tag With Style!</h1>
+            <audio controls loop preload="none" style="display: block; width: 100%;">
+              <source src="img/In the Moment of Inspiration.mp3" type="audio/mp3">
+                  Your browser does not support the audio element!Sorry!
+                </audio>
 
           </div>
 
+            <div class='subtopic'>
+              <h1>Canvas!</h1>
+              <canvas id="Canvas" width="500" height="500"></canvas>
+            </div>
+
+
+
         <h2>Code used in this Topic:</h2>
         <pre class="prettyprint">
+        VIDEO TAG
+         < video controls loop preload="auto"
+          < width="300px" height="300px" poster="img/lego-logo.svg" />
+            < source src="img/small.mp4" type="video/mp4" />
+            < source src="img/small.webm" type="video/webm" />
+            < source src="img/small.ogv" type="video/ogg" />
+            < source src="img//small.flv" type="video/flv" />
+            < source src="img/small.3gp" type="video/3gp" />
+            Your browser does not support the video element! Sorry!
+        < /video>
 
+        AUDIO TAG
+        < audio controls loop>
+          < source src="img/In the Moment of Inspiration.mp3" type="audio/mp3">
+              Your browser does not support the audio element!Sorry!
+            < /audio>
         </pre>
       </div>
 
@@ -89,6 +142,6 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="../css/bootstrap/js/bootstrap.min.js"></script>
-    <script src="js/topic8.js"></script>
+    <script src="js/topic10.js"></script>
   </body>
 </html>

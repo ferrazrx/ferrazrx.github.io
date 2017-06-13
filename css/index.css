@@ -388,8 +388,59 @@ background-color: rgba(	129,,0, 0.5);
   transform: scale3d(1.2,1.2,1.2);
 }
 
+audio::-webkit-media-controls-panel{
+  background-color: green;
+}
 
+audio::-webkit-media-controls-current-time-display,
+audio::-webkit-media-controls-time-remaining-display,
+audio::-webkit-media-controls-timeline{
+  color: white;
+}
 
+audio::-webkit-media-controls-timeline-container,audio::-webkit-media-controls-timeline{
+  background-color: red;
+}
+
+.flipcontainer{
+  position: relative;
+  width: 200px;
+  height: 250px;
+  perspective: 800px;
+}
+
+.card{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+}
+#hover:hover{
+  transform: rotateX(180deg);
+}
+.card div{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  color: white;
+  font-size: 7em;
+  position:absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+.face1{
+  background: red;
+}
+.face2{
+  background-color: blue;
+  transform: rotateY(180deg);
+}
+.card:hover{
+  transform: rotateY(180deg);
+}
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,

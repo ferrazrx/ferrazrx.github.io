@@ -11,6 +11,7 @@ menu.addEventListener('click', close);
 function show(){
   menu.classList="";
   menu.classList.add('show');
+  //menu.classList.remove('close');
 }
 function close(){
   menu.classList="";
