@@ -15,6 +15,15 @@ body {
   display: none;
 }
 
+#info{
+  transition: all 1s
+}
+.open{
+  transform: translate(210px,0px);
+}
+.close{
+  transform: translate(-210px,0px);
+}
 
 .flex{
   display: flex;
@@ -274,7 +283,39 @@ background-color: rgba(	129,,0, 0.5);
   transition: all .8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
+@keyframes pop {
+    0% {
+      transform: translate(0px, -400px);
+    }
+    50% {
+      transform: translate(0px, 0px);
+    }
+    100%{
+      transform: translate(-230px,-120px) scale(0.3);
+    }
+}
+#title{
+  display: block;
+  position: absolute;
+  animation: pop 2.5s;
+  animation-fill-mode: both;
+}
+@keyframes text {
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+}
+#text{
+  animation: text 1s;
+  animation-delay: 2.2s;
+  animation-fill-mode: both;
+}
+
 .subtopic {
+  z-index: 0;
   background-color: rgba(	0,128,0, 0.2);
   padding-left: 15px;
   padding-right: 15px;
@@ -344,6 +385,7 @@ background-color: rgba(	129,,0, 0.5);
   padding: 10px;
 }
 #sideMenu{
+  z-index: 1;
   position: fixed;
   display: block;
   left: 0;
