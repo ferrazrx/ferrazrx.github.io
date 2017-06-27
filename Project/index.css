@@ -13,6 +13,7 @@ h2{
 	font-size: 1.5vw;
 	font-weight: 300;
 	text-shadow: .5px .5px #000;
+	margin: 0px;
 }
 
 input::placeholder{
@@ -45,10 +46,10 @@ body, html, .fullPage {
 	position: relative;
 }
 
-button {
-	margin: 10px;
+.button {
+	margin: 3px;
 	font-size: 1vw;
-	padding: 5px;
+	padding: 4px;
 	cursor: pointer; 
 	color: #FFF;
 	background-color: #cc574c;
@@ -57,7 +58,7 @@ button {
 	transition: all .6s;
 }
 
-button:hover{
+.button:hover{
 	color: #000;
 	background-color: #f6f4f6;
 	border: 3px solid #e7e5e7;
@@ -69,7 +70,7 @@ button:hover{
 	font-size: 1vw;
 	color: #FFF;
 	font-family: 'Quicksand', sans-serif;
-	margin-top: 5px;
+	margin-top: 4px;
 }
 
 .loginForm input, .signUpForm input {
@@ -161,19 +162,67 @@ button:hover{
 	transform: scale(1.2,1.2);
 }
 
+.opacity{
+	opacity: .7;
+}
+
+.case{
+	width: 25vw;
+	transform: rotate(-10deg);
+	animation: show 1s;
+	animation-delay: 3s;
+	animation-fill-mode: both;
+	z-index: 0;
+}
+.ilustration {
+	position: absolute;
+	top: 350px;
+	animation: fade .6s;
+	animation-delay: 5.1s;
+	animation-fill-mode: both;
+	
+}
+.pill1, .pill2, .pill3 {
+	animation: fall 1s;
+	position: absolute;
+	width: 5vw;
+	z-index: 1;
+	animation-fill-mode: both;
+}
+.pill1{
+	animation-delay: 3.5s;
+}
+.pill2{
+	animation-delay: 3.8s;
+}
+.pill3{
+	animation-delay: 4.2s;
+}
+
 .appDescription {
-	animation: description 1s;
+	animation: show 1s;
 	animation-delay: 2s;
 	animation-fill-mode: both;
 }
 
 .form {
-	animation: description 1s;
-	animation-delay: 3s;
+	animation: show 1s;
+	animation-delay: 5.8s;
 	animation-fill-mode: both;
 }
 
 /*Animation keyframes*/
+
+@keyframes fall {
+	0%{
+		transform: translate3d(5px,-10px,0px);
+		opacity: 0;
+	}
+	100%{
+		transform: translate3d(5px,102px,0px);
+		opacity: 1;
+	}
+}
 @keyframes title {
 	0%{
 		transform: translate3d(0px,-200px,0px) scale(1.2,1.2);
@@ -186,7 +235,7 @@ button:hover{
 	}
 }
 
-@keyframes description {
+@keyframes show {
 	0%{
 		opacity: 0;
 	}
@@ -195,11 +244,24 @@ button:hover{
 	}
 }
 
+@keyframes fade {
+	0%{
+		opacity: 1;
+	}
+	100%{
+		opacity: 0;
+	}
+}
 @media (max-width: 1575px) {
+	.case, .ilustration, .pill1, .pill2, .pill3{
+		display: none;
+		animation: none;
+	}
 	.loginContainer{
 		width: 95%;
 	}
 	.form{
+		animation-delay: 3s;
 		width: 95%;
 	}
 	h1{
@@ -229,9 +291,6 @@ button:hover{
 	}
 	h2{
 		font-size: 5vw;
-	}
-	.loginForm{
-		
 	}
 	.signUpForm{
 		display: none;
