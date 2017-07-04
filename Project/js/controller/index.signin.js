@@ -6,11 +6,12 @@ function signIn() {
   var login = document.getElementById("login").value;
   var password = document.getElementById("password").value;
 
-  if(login==="" || password==="") {
+  if (login == "" || password == "") {
     messageLogin(false, "To login you must fill the login and password");
+    return;
+  } else {
+    var result = tryLogin(login, password);
   }
-
-  var result = tryLogin(login, password);
 }
 
 //Verify if the login exists
@@ -28,15 +29,17 @@ function tryLogin(login, password) {
 }
 
 
-function messageLogin(result, content="") {
+function messageLogin(result, content = "") {
   var message = document.getElementsByClassName("message")[0];
   var signIn = document.getElementsByClassName("loginContainer")[0];
   var signUpMenu = document.getElementsByClassName('signUpForm')[0];
 
   if(result === true){
-   signIn.innerHTML = "";
+   signIn.remove();
+   signUpMenu.remove();
    message.style.display = "none";
-   signUpMenu.style.display = "none";
+   sessionStore.setItem("actualCustomer", customerExists);
+   openApp(sessionStorage.getItem("actualCustomer"));
   }
   if(result === false){
    message.innerHTML = content;

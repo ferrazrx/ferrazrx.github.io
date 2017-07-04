@@ -153,7 +153,7 @@ body, html, .fullPage {
   transform: translate3d(0,-10vh,0);
 }
 
-.loginContainer{
+.loginContainer, .app{
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -170,14 +170,39 @@ body, html, .fullPage {
   z-index: 1;
 }
 
+.app {
+  display: none;
+  background-color: rgba(137, 197, 206, .8);
+  animation: title 2s;
+}
+
+.container{
+  width: 60%;
+  color: #FFF;
+  background-color: rgba(0,0,0,.3);
+  border-radius: 20px;
+  padding: 10px;
+
+}
+
+.container li {
+  color: #FFF;
+}
+
 .fontWhite {
 	color: #FFF;
 }
 
 .logo{
 	width: 15%;
+  height: 60%;
 	margin: 10px;
 	transition: transform .7s;
+}
+
+.imgMedium{
+  max-width: 40%;
+  padding: 5px;
 }
 
 .row{
@@ -214,7 +239,6 @@ body, html, .fullPage {
 	animation-fill-mode: both
 }
 
-
 .title {
 	width: 60%;
 	display: flex;
@@ -238,15 +262,14 @@ body, html, .fullPage {
 	animation-fill-mode: both;
 	z-index: 0;
 }
+
 .ilustration {
 	position: absolute;
 	top: 47vh;
 	animation: fade .6s;
 	animation-delay: 5.1s;
 	animation-fill-mode: both;
-
 }
-
 .pill{
   position: fixed;
   top: 0;
