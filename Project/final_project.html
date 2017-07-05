@@ -51,19 +51,63 @@
 			<div class="message">
 			</div>
 			<div class="app">
-				<h2 id="customer" class="fontWhite">teste</h2>
-				<div class="container">
-					<h3 class="fontWhite">Remember:</h3>
-					<ul>
-						<li>Daily reminders are often helpful when scheduling your medication doses. Try to time taking your medicine around activities that you do daily such as setting your alarm clock, brushing your teeth, eating your meals, going to work, or doing other daily activities. Once you have the routine down it will become a habit (for example, taking your daily meds before you brush your teeth by putting the prescription bottle next to your toothbrush).
-	Setting your watch alarm to go off when it's time to take your medicine.</li>
-						<li>Placing a reminder card in a visible place.</li>
-						<li>Having a family member or a friend remind you.</li>
-						<li>Use a medication box that will hold your entire day's supply of medicine. This will let you know if you missed a dose of medicine.</li>
-					</ul>
+				<div class="welcome column">
+					<h2 id="customer" class="fontWhite"></h2>
+					<div class="container">
+						<h3 class="fontWhite">Remember:</h3>
+						<ul>
+							<li>Daily reminders are often helpful when scheduling your medication doses. Try to time taking your medicine around activities that you do daily such as setting your alarm clock, brushing your teeth, eating your meals, going to work, or doing other daily activities. Once you have the routine down it will become a habit (for example, taking your daily meds before you brush your teeth by putting the prescription bottle next to your toothbrush).
+		Setting your watch alarm to go off when it's time to take your medicine.</li>
+							<li>Placing a reminder card in a visible place.</li>
+							<li>Having a family member or a friend remind you.</li>
+							<li>Use a medication box that will hold your entire day's supply of medicine. This will let you know if you missed a dose of medicine.</li>
+						</ul>
+					</div>
+					<img class="imgMedium" src="img/customer.png" alt="customer">
+					<div class="button">Go on!</div>
 				</div>
-				<img class="imgMedium" src="img/customer.png" alt="customer">
-				<div class="button">Go on!</div>
+				<div class="medicineForm">
+					<h2 class="fontWhite">Medicine Calendar</h2>
+					<img class="logo" src="img/frascos.png" alt="frasco">
+					<div class="row">
+						<label>Medicine's Name:</label>
+						<input id="medicine" type="text" placeholder="name...">
+						<label>Amount:</label>
+						<input id="amount" type="number" placeholder="0" min="1" max="10">
+						<label>Days:</label>
+						<select id="days" multiple>
+							<option value="Sunday">Sunday</option>
+							<option value="Monday">Monday</option>
+							<option value="Tuesday">Tuesday</option>
+							<option value="Wednesday">Wednesday</option>
+							<option value="Thursday">Thursday</option>
+							<option value="Friday">Friday</option>
+							<option value="Sunday">Sunday</option>
+						</select>
+						<p>Hold down the Ctrl (windows) / Command (Mac) button to select multiple days of the week.</p>
+					</div>
+					<div class="button">Add new medicine!</div>
+					<table>
+						<tr>
+							<th>Sunday</th>
+							<th>Monday</th>
+							<th>Tuesday</th>
+							<th>Wednesday</th>
+							<th>Thursday</th>
+							<th>Friday</th>
+							<th>Sunday</th>
+						</tr>
+						<tr>
+							<td>Pills:</td>
+							<td>Pills:</td>
+							<td>Pills:</td>
+							<td>Pills:</td>
+							<td>Pills:</td>
+							<td>Pills:</td>
+							<td>Pills:</td>
+						</tr>
+					</table>
+				</div>
 			</div>
 		</div>
 	<script src="js/index.js"></script>

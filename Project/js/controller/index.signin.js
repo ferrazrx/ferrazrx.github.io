@@ -38,8 +38,8 @@ function messageLogin(result, content = "") {
    signIn.remove();
    signUpMenu.remove();
    message.style.display = "none";
-   sessionStore.setItem("actualCustomer", customerExists);
-   openApp(sessionStorage.getItem("actualCustomer"));
+   sessionStorage.setItem("actualCustomer", customerExists);
+   openApp(customerExists);
   }
   if(result === false){
    message.innerHTML = content;

@@ -10,6 +10,9 @@ document.head.appendChild(imported);
 var imported = document.createElement('script');
 imported.src = './js/view/index.pills.js';
 document.head.appendChild(imported);
+var imported = document.createElement('script');
+imported.src = './js/view/index.app.js';
+document.head.appendChild(imported);
 
 
 //include controller

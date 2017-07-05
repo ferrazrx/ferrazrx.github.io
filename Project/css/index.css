@@ -42,22 +42,45 @@ body, html, .fullPage {
 	position: relative;
 }
 
-.loginForm label, .signUpForm label{
+table {
+  width:98%;
+  background-color: rgba(0,0,0,.5);
+  padding: 20px;
+  border-radius: 10px;
+  color: #FFF;
+  font-size:1.2em;
+  margin: 10px;
+}
+
+th,td {
+  padding: 5px;
+  width: 200px;
+}
+
+th {
+  background-color: #89c5ce;
+  border-radius: 5px;
+}
+
+td{
+  border-left: 1px solid #FFF;
+  border-right: 1px solid #FFF;
+}
+
+ label {
 	font-size: 1.2em;
 	color: #FFF;
 	font-family: 'Quicksand', sans-serif;
-	margin-top: 4px;
+	margin: 1px 8px 0px 15px;
 }
 
-.loginForm input, .signUpForm input {
-	font-size: 1.1em;
+input, select {
+	font-size: .9em;
 	width: 100%;
-	max-height: 20%;
-	margin-top: 5px;
+	height: 20%;
 	border: 4px solid #FFF;
 	border-radius: 5px;
-	padding: 2px;
-	margin: 5px;
+	padding: 5px;
 	transition: all .6s;
 }
 
@@ -74,7 +97,7 @@ body, html, .fullPage {
 
 .button {
 	text-align: center;
-	margin: 3px;
+	margin: 9px;
 	width: 40%;
 	font-size: 1.2em;
 	padding: 4px;
@@ -96,7 +119,6 @@ body, html, .fullPage {
 
 .signUpForm {
 	position: fixed;
-	width: 70vw;
 	height: 13vh ;
 	background-color: rgba(0,0,0,.2);
 	border-radius: 20px;
@@ -107,15 +129,15 @@ body, html, .fullPage {
 	right: 0;
 	bottom: 0;
 	transition: all 1s;
-	transform: translate3d(0,20vh,0);
+	transform: translate3d(0,50vh,0);
 }
 
 .openSignUp{
-	transform: translate3d(0,-1.8vh,0);
+	transform: translate3d(0,-1vh,0);
 }
 
 .hiddenSignUp{
-  transform: translate3d(0,1.8vh,0);
+  transform: translate3d(0,1vh,0);
 }
 
 .background {
@@ -153,7 +175,7 @@ body, html, .fullPage {
   transform: translate3d(0,-10vh,0);
 }
 
-.loginContainer, .app{
+.loginContainer {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -172,8 +194,26 @@ body, html, .fullPage {
 
 .app {
   display: none;
+  flex-direction: column;
+  align-items: center;
+	justify-content: center;
+  align-self: center;
   background-color: rgba(137, 197, 206, .8);
   animation: title 2s;
+  border-radius: 20px;
+	box-shadow: 1px 1px 1px #000;
+  width: 90vw;
+  margin: 0 auto;
+  z-index: 1;
+}
+
+.medicineForm{
+  animation: show 1.5s;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+	justify-content: center;
+  align-self: center;
 }
 
 .container{
@@ -182,9 +222,8 @@ body, html, .fullPage {
   background-color: rgba(0,0,0,.3);
   border-radius: 20px;
   padding: 10px;
-
+  display: flex;
 }
-
 .container li {
   color: #FFF;
 }

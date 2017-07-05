@@ -7,4 +7,7 @@ window.onload = function() {
 	var login = document.getElementsByClassName('button')[0];
 	login.addEventListener('click', signIn);
 
+	var login = document.getElementsByClassName('button')[3];
+	login.addEventListener('click', goToApp);
+
 }
