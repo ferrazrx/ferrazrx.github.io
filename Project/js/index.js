@@ -25,3 +25,7 @@ document.head.appendChild(imported);
 var imported = document.createElement('script');
 imported.src = './js/controller/index.signup.js';
 document.head.appendChild(imported);
+var imported = document.createElement('script');
+imported.src = './js/controller/index.addmedicine.js';
+document.head.appendChild(imported);
+

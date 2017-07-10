@@ -32,13 +32,13 @@ function tryLogin(login, password) {
 function messageLogin(result, content = "") {
   var message = document.getElementsByClassName("message")[0];
   var signIn = document.getElementsByClassName("loginContainer")[0];
-  var signUpMenu = document.getElementsByClassName('signUpForm')[0];
+  var signUpMenu = document.getElementsByClassName('signUp')[0];
 
   if(result === true){
    signIn.remove();
    signUpMenu.remove();
-   message.style.display = "none";
-   sessionStorage.setItem("actualCustomer", customerExists);
+   message.classList.toggle("openMessage");
+   sessionStorage.setItem("actualCustomer", JSON.stringify(customerExists));
    openApp(customerExists);
   }
   if(result === false){

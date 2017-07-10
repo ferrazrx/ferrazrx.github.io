@@ -7,7 +7,10 @@ window.onload = function() {
 	var login = document.getElementsByClassName('button')[0];
 	login.addEventListener('click', signIn);
 
-	var login = document.getElementsByClassName('button')[3];
-	login.addEventListener('click', goToApp);
+	var app = document.getElementsByClassName('button')[4];
+	app.addEventListener('click', goToApp);
+	
+	var add = document.getElementsByClassName('button')[5];
+	add.addEventListener('click', addMedicine);
 
 }

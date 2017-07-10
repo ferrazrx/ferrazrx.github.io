@@ -117,9 +117,10 @@ input, select {
 	border-radius: 5px;
 }
 
-.signUpForm {
+.signUp {
 	position: fixed;
-	height: 13vh ;
+	min-width: 90%;
+	min-height: 12.5%;
 	background-color: rgba(0,0,0,.2);
 	border-radius: 20px;
 	box-shadow: 1px 1px 1px #000;
@@ -129,16 +130,13 @@ input, select {
 	right: 0;
 	bottom: 0;
 	transition: all 1s;
-	transform: translate3d(0,50vh,0);
+	transform: translate3d(0,100%,0);
 }
 
 .openSignUp{
-	transform: translate3d(0,-1vh,0);
+	transform: translate3d(0, 0%,0);
 }
 
-.hiddenSignUp{
-  transform: translate3d(0,1vh,0);
-}
 
 .background {
 	background: #89c5ce; /* fallback for old browsers */
@@ -147,10 +145,9 @@ input, select {
 }
 
 .message{
-  height: 2vh;
   font-size: 1em;
   position: fixed;
-  width: 70vw;
+  width: 90%;
   transform: translateY(-8vh);
   background-color: rgba(200, 0, 0, .7);
   color: #FFF;
@@ -388,13 +385,20 @@ input, select {
 	h2{
 		font-size: 1.2em;
 	}
-	.loginForm label, .signUpForm label {
+	.loginForm label, .signUp label {
 		font-size: .8em;
 	}
-	.loginForm input, .signUpForm input {
+	.loginForm input, .signUp input {
 		font-size: 1em;
 		width: 90%;
 	}
-
+	.row {
+		flex-direction: column;
+	}
+	.signUp{
+		height: 90%;
+		background-color: rgba(0,0,0,.9);
+		z-index: 1;
+	}
 
 }
