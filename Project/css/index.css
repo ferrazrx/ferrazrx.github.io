@@ -122,6 +122,7 @@ input, select {
 }
 
 .signUp {
+	display: none;
 	position: fixed;
 	flex: 1;
 	background-color: rgba(0,0,0,.9);
@@ -138,6 +139,7 @@ input, select {
 }
 
 .openSignUp{
+	display: flex;
 	transform: translate3d(0, 0vh,0);
 }
 
@@ -149,23 +151,23 @@ input, select {
 }
 
 .message{
-  font-size: 1em;
-  position: fixed;
-  width: 90%;
-  transform: translateY(-8vh);
-  background-color: rgba(200, 0, 0, .7);
-  color: #FFF;
-  left: 0;
+	font-size: 1em;
+	position: fixed;
+	width: 90%;
+	transform: translateY(-8vh);
+	background-color: rgba(200, 0, 0, .7);
+	color: #FFF;
+	left: 0;
 	right: 0;
 	top: 0;
-  margin: 0 auto;
-  text-align: center;
-  border-radius: 7px;
-  box-shadow: 1px 1px 1px #000;
-  font-weight: 900;
-  padding: 10px;
-  transition: all 1s;
-  z-index: 1;
+	margin: 0 auto;
+	text-align: center;
+	border-radius: 7px;
+	box-shadow: 1px 1px 1px #000;
+	font-weight: 900;
+	padding: 10px;
+	transition: all 1s;
+	z-index: 1;
 }
 
 .openMessage{
