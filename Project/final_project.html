@@ -34,7 +34,7 @@
 			</div>
 			<div class="signUp column">
 				<h2 class="fontWhite">Sign Up</h2>
-				<div class="row">
+				<div class="column">
 					<label>Name:</label>
 					<input id="name" type="text" placeholder="full name...">
 					<label>Age:</label>
@@ -66,8 +66,21 @@
 					<div class="button">Go on!</div>
 				</div>
 				<div class="medicineForm">
-					<h2 class="fontWhite">Medicine Calendar</h2>
-					<img class="logo" src="img/frascos.png" alt="frasco">
+					<div class="row">
+						<div class="center">
+							<h2 class="fontWhite">Medicine Calendar</h2>
+							<img class="logo" src="img/frascos.png" alt="frasco">
+						</div>
+						<div class="fontWhite transparent">
+							<h2>Pacient's Information:</h2>
+							<div class="informations">
+							<p id="pacient"><strong>Name:</strong></p>
+							<p id="year"><strong>Age:</strong></p>
+							<p id="medications"><strong>Medications:</strong></p>
+							</div>
+							
+						</div>
+					</div>
 					<div class="row">
 						<label>Medicine's Name:</label>
 						<input id="medicine" type="text" placeholder="name...">
@@ -75,13 +88,13 @@
 						<input id="amount" type="number" placeholder="0" min="1" max="10">
 						<label>Days:</label>
 						<select id="days" multiple>
-							<option value="Sunday">Sunday</option>
-							<option value="Monday">Monday</option>
-							<option value="Tuesday">Tuesday</option>
-							<option value="Wednesday">Wednesday</option>
-							<option value="Thursday">Thursday</option>
-							<option value="Friday">Friday</option>
-							<option value="Sunday">Sunday</option>
+							<option class="day" value="Sunday">Sunday</option>
+							<option class="day" value="Monday">Monday</option>
+							<option class="day" value="Tuesday">Tuesday</option>
+							<option class="day" value="Wednesday">Wednesday</option>
+							<option class="day" value="Thursday">Thursday</option>
+							<option class="day" value="Friday">Friday</option>
+							<option class="day" value="Saturday">Saturday</option>
 						</select>
 						<p>Hold down the Ctrl (windows) / Command (Mac) button to select multiple days of the week.</p>
 					</div>
@@ -94,16 +107,16 @@
 							<th>Wednesday</th>
 							<th>Thursday</th>
 							<th>Friday</th>
-							<th>Sunday</th>
+							<th>Saturday</th>
 						</tr>
 						<tr>
-							<td>Pills:</td>
-							<td>Pills:</td>
-							<td>Pills:</td>
-							<td>Pills:</td>
-							<td>Pills:</td>
-							<td>Pills:</td>
-							<td>Pills:</td>
+							<td id="Sunday">Pills:</td>
+							<td id="Monday">Pills:</td>
+							<td id="Tuesday">Pills:</td>
+							<td id="Wednesday">Pills:</td>
+							<td id="Thursday">Pills:</td>
+							<td id="Friday">Pills:</td>
+							<td id="Saturday">Pills:</td>
 						</tr>
 					</table>
 				</div>

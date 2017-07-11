@@ -5,6 +5,5 @@ class Person {
 		this.age = age;
 		this.password = password;
 		this.medicines = [];
-    this.addMedine = function (name){ this.medicines.push(name);}
 	}
 }

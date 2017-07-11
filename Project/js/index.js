@@ -2,6 +2,9 @@
 var imported = document.createElement('script');
 imported.src = './js/model/Person.class.js';
 document.head.appendChild(imported);
+var imported = document.createElement('script');
+imported.src = './js/model/Medicine.class.js';
+document.head.appendChild(imported);
 
 //include CSS
 var imported = document.createElement('script');

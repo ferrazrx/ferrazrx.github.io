@@ -37,7 +37,7 @@ function messageLogin(result, content = "") {
   if(result === true){
    signIn.remove();
    signUpMenu.remove();
-   message.classList.toggle("openMessage");
+   message.classList.remove("openMessage");
    sessionStorage.setItem("actualCustomer", JSON.stringify(customerExists));
    openApp(customerExists);
   }

@@ -35,7 +35,7 @@ p {
 }
 
 body, html, .fullPage {
-	width: 100%;
+	flex: 1;
     height: 100%;
     margin: 0;
 	display: flex;
@@ -60,6 +60,10 @@ th,td {
 th {
   background-color: #89c5ce;
   border-radius: 5px;
+}
+
+tr{
+	vertical-align: top;
 }
 
 td{
@@ -119,22 +123,22 @@ input, select {
 
 .signUp {
 	position: fixed;
-	min-width: 90%;
-	min-height: 12.5%;
-	background-color: rgba(0,0,0,.2);
+	flex: 1;
+	background-color: rgba(0,0,0,.9);
 	border-radius: 20px;
 	box-shadow: 1px 1px 1px #000;
 	padding: 10px;
-	margin: 0 auto;
+	margin: 20px;;
 	left: 0;
 	right: 0;
 	bottom: 0;
 	transition: all 1s;
-	transform: translate3d(0,100%,0);
+	transform: translate3d(0,100vh,0);
+	z-index: 1;
 }
 
 .openSignUp{
-	transform: translate3d(0, 0%,0);
+	transform: translate3d(0, 0vh,0);
 }
 
 
@@ -174,34 +178,33 @@ input, select {
 
 .loginContainer {
 	display: flex;
+	flex: 1;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
 	align-self: center;
-	width: 70vw;
-	height: 65vh;
-	margin: 0 auto;
+	margin: 50px;
 	background-color: rgba(0,0,0,.2);
 	border-radius: 20px;
 	box-shadow: 1px 1px 1px #000;
 	overflow: hidden;
-  background-color: rgba(0,0,0,.2);
-  z-index: 1;
+	background-color: rgba(0,0,0,.2);
+	z-index: 1;
 }
 
 .app {
-  display: none;
-  flex-direction: column;
-  align-items: center;
+	display: none;
+	flex: 1;
+	flex-direction: column;
+	align-items: center;
 	justify-content: center;
-  align-self: center;
-  background-color: rgba(137, 197, 206, .8);
-  animation: title 2s;
-  border-radius: 20px;
+	align-self: center;
+	background-color: rgba(137, 197, 206, .8);
+	animation: title 2s;
+	border-radius: 20px;
 	box-shadow: 1px 1px 1px #000;
-  width: 90vw;
-  margin: 0 auto;
-  z-index: 1;
+	margin: 20px;
+	z-index: 1;
 }
 
 .medicineForm{
@@ -214,12 +217,13 @@ input, select {
 }
 
 .container{
-  width: 60%;
+  flex: 1;
   color: #FFF;
   background-color: rgba(0,0,0,.3);
   border-radius: 20px;
   padding: 10px;
   display: flex;
+  margin: 20px;
 }
 .container li {
   color: #FFF;
@@ -227,6 +231,13 @@ input, select {
 
 .fontWhite {
 	color: #FFF;
+}
+
+.transparent{
+	background-color: rgba(0,0,0,.3);
+	border-radius: 10px;
+	padding: 10px;
+	box-shadow: 2px 2px 10px #000;
 }
 
 .logo{
@@ -385,6 +396,9 @@ input, select {
 	h2{
 		font-size: 1.2em;
 	}
+	p{
+		font-size: 1em;
+	}
 	.loginForm label, .signUp label {
 		font-size: .8em;
 	}
@@ -395,10 +409,6 @@ input, select {
 	.row {
 		flex-direction: column;
 	}
-	.signUp{
-		height: 90%;
-		background-color: rgba(0,0,0,.9);
-		z-index: 1;
-	}
+	
 
 }
