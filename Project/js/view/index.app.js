@@ -49,7 +49,7 @@ function goToApp(){
 
       img2.src = "img/close-icon.png";
       img2.alt = "close";
-      img2.setAttribute("id",item);
+      img2.setAttribute("id", item);
       img2.style.width = "15px";
       img2.style.cursor="pointer";
       img2.setAttribute("onclick","remove(this)");
@@ -70,8 +70,9 @@ function goToApp(){
 }
 
 function remove(id){
-  console.log(id.id);
-  var pacient = JSON.parse(sessionStorage.getItem("actualCustomer"));
-  pacient.medicines.splice(id,1);
-  updateStorage(pacient);
+  if(window.confirm("Are you sure? You'll delete every entry of this medicine.")){
+    var pacient = JSON.parse(sessionStorage.getItem("actualCustomer"));
+    pacient.medicines.splice(id.id,1);
+    updateStorage(pacient);
+  }
 }
