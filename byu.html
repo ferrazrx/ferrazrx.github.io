@@ -2,28 +2,48 @@
 <html>
   <head>
     <title>BYU | Rafael Ferraz</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
     <meta charset="utf-8">
-    <meta name="viewport" content="width:device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="Rafael Ximenes Ferraz">
-    <meta name="description" content="BYU-I webpage.">
+    <meta name="description" content="Welcome to my website! Here ou will find my personal portfolio and main works.">
     <meta name="keywords" content="HTML, CSS, Javascript, student, NSCC, BYU-I">
+    <!--scripts-->
+    <script src="js/scripts.min.js"></script>
+    <!--Links-->
     <link rel="stylesheet" type="text/css" href="css/index.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
   </head>
   <body>
-    <div class="content">
-      <header class="header">
-        <nav class="header_nav"><img class="header_logo" src="img/logo.png" alt="Logo">
-          <ul><a href="index.html">
-              <li>Home</li></a><a href="byu.html">
-              <li>BYU-I</li></a><a href="#">
-              <li>NSCC</li></a><a href="#">
-              <li>Design</li></a><a href="#">
-              <li>Contact</li></a></ul>
-        </nav>
-      </header>
-      <section class="section section--black_background section--vertical"><a href="BYU/CIT261-Mobile Development/index.html">
-          <h2>CIT 261 - CSS3 and Javascript</h2><img class="section_img" src="img/CIT261_banner.png" alt="CIT 261 Banner"></a></section>
+    <div class="container">
+      <nav>
+        <ul class="nav"><a class="nav-link" href="index.html">
+            <li class="nav-item">Home</li></a><a class="nav-link" href="byu.html">
+            <li class="nav-item">BYU-I</li></a><a class="nav-link" href="#">
+            <li class="nav-item">NSCC</li></a><a class="nav-link" href="#">
+            <li class="nav-item">Design</li></a><a class="nav-link" href="#">
+            <li class="nav-item">Contact</li></a></ul>
+      </nav>
+      <div class="container">
+        <nav class="navbar navbar-light bg-light"><span class="navbar-brand mb-0 h1">BYU Idaho</span></nav>
+        <div class="row">
+          <div class="project">
+            <CSS3>Animation and JavaScript Animation</CSS3><a href="BYU/CSS3Javascript/index.html">
+              <h2>CSS3 | Javascript</h2></a>
+          </div>
+          <div class="project">
+            <CSS3>Time Machine</CSS3><a href="https://github.com/ferrazrx/Time-Machine-Project">
+              <h2>Java    </h2></a>
+          </div>
+        </div>
+        <ol class="breadcrumb">
+          <p>You are here:    </p>
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item active">BYU</li>
+        </ol>
+      </div>
+      <footer>
+        <p>Copyright&copy; 2018 - Rafael Ferraz</p>
+      </footer>
     </div>
   </body>
 </html>
