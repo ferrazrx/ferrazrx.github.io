@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css?family=Bangers|Frijole');
+*{
+  box-sizing: border-box;
+}
+body,html{
+  background-color: #3CB4CB;
+  padding: 0;
+  margin: 0;
+}
+main{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 420px;
+  height: 420px;
+  margin: 0 auto;
+}
+.row{
+  display: flex;
+  flex-direction: row;
+  background-color: #F3A32A;
+  width: 99%;
+  height: 99%;
+  padding: 1%;
+}
+.column{
+  display: block;
+  background-color: #82BF6E;
+  width: 98%;
+  height: 98%;
+  border: 1px solid #FFF;
+  padding: 1%;
+  margin: 1%;
+}
+header{
+  background: #E94858 url("../img/zombie.png")  0px 0px no-repeat border-box;
+  padding: 30px;
+  max-height: 20%;
+  position: relative;
+}
+.zombie{
+  background: #E94858 url("../img/zombie2.png")  100%/100% no-repeat border-box;
+  cursor: url('../img/hammer.png'), auto;
+}
+.control{
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 30px;
+}
+.control label{
+  display: block;
+  font-family: 'Bangers', cursive;
+  font-size: 1.5em;
+  color: #FFF;
+}
+.control input{
+  display: block;
+  font-family: 'Bangers', cursive;
+  font-size: 1.4em;
+  border-radius: 8px;
+  padding: 6px;
+  text-align: center;
+
+}
+h1{
+  font-family: 'Bangers', cursive;
+  display: block;
+  width: 340px;
+  color: #F3A32A;
+  font-size: 4em;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+  margin: 20px;
+  background-color: #16434B;
+  padding: 10px;
+  margin: 20px auto;
+}
+[value="Start"]{
+  background-color: #82BF6E;
+  padding: 20px 50px;
+  color: #FFF;
+  font-size: 2em;
+  font-family: 'Frijole', cursive;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+  display: block;
+  margin: 0 auto;
+}
+input[type=range] {
+  -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+  width: 100%; /* Specific width is required for Firefox. */
+  background: transparent; /* Otherwise white in Chrome */
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+}
+
+input[type=range]:focus {
+  outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+}
+
+input[type=range]::-ms-track {
+  width: 100%;
+  cursor: pointer;
+
+  /* Hides the slider so custom styles can be added */
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+/* Special styling for WebKit/Blink */
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border: 1px solid #000000;
+  height: 36px;
+  width: 16px;
+  border-radius: 3px;
+  background: #ffffff;
+  cursor: pointer;
+  margin-top: -14px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d; /* Add cool effects to your sliders! */
+}
+
+/* All the same stuff for Firefox */
+input[type=range]::-moz-range-thumb {
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  border: 1px solid #000000;
+  height: 36px;
+  width: 16px;
+  border-radius: 3px;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+/* All the same stuff for IE */
+input[type=range]::-ms-thumb {
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  border: 1px solid #000000;
+  height: 36px;
+  width: 16px;
+  border-radius: 3px;
+  background: #ffffff;
+  cursor: pointer;
+}
+input[type=range] {
+  -webkit-appearance: none;
+  margin: 18px 0;
+  width: 100%;
+}
+input[type=range]:focus {
+  outline: none;
+}
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 8.4px;
+  cursor: pointer;
+  animate: 0.2s;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  background: #3071a9;
+  border-radius: 1.3px;
+  border: 0.2px solid #010101;
+}
+input[type=range]::-webkit-slider-thumb {
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  border: 1px solid #000000;
+  height: 36px;
+  width: 16px;
+  border-radius: 3px;
+  background: #ffffff;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -14px;
+}
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: #367ebd;
+}
+input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 8.4px;
+  cursor: pointer;
+  animate: 0.2s;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  background: #3071a9;
+  border-radius: 1.3px;
+  border: 0.2px solid #010101;
+}
+input[type=range]::-moz-range-thumb {
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  border: 1px solid #000000;
+  height: 36px;
+  width: 16px;
+  border-radius: 3px;
+  background: #ffffff;
+  cursor: pointer;
+}
+input[type=range]::-ms-track {
+  width: 100%;
+  height: 8.4px;
+  cursor: pointer;
+  animate: 0.2s;
+  background: transparent;
+  border-color: transparent;
+  border-width: 16px 0;
+  color: transparent;
+}
+input[type=range]::-ms-fill-lower {
+  background: #2a6495;
+  border: 0.2px solid #010101;
+  border-radius: 2.6px;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}
+input[type=range]::-ms-fill-upper {
+  background: #3071a9;
+  border: 0.2px solid #010101;
+  border-radius: 2.6px;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}
+input[type=range]::-ms-thumb {
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  border: 1px solid #000000;
+  height: 36px;
+  width: 16px;
+  border-radius: 3px;
+  background: #ffffff;
+  cursor: pointer;
+}
+input[type=range]:focus::-ms-fill-lower {
+  background: #3071a9;
+}
+input[type=range]:focus::-ms-fill-upper {
+  background: #367ebd;
+}
+@media screen and (max-width:880px) {
+  header{
+    background: #E94858;
+  }
+  .control{
+    display: block;
+    position: relative;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+}

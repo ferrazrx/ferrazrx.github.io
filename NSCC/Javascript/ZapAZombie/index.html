@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Zap-a-Zombie</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script type="text/javascript" src="js/index.js">
+
+    </script>
+  </head>
+  <body>
+    <header>
+      <h1>Zap-a-Zombie</h1>
+      <input type="button" value="Start">
+      <section class="control">
+        <label for="rows">Play Size:</label>
+        <input id="rows" type="number" max="22" min="2" value="">
+        <label for="zombies">Zombie Frequency:</label>
+        <input id="zombies" type="range" value="" min="1" max="3" step="0.25" value="1">
+        <label for="points">Points:</label>
+        <input id="points" type="number" value="0" disabled>
+
+      </section>
+    </header>
+    <main>
+      <div class="row">
+        <div class="column"></div>
+        <div class="column"></div>
+      </div>
+      <div class="row">
+        <div class="column"></div>
+        <div class="column"></div>
+      </div>
+    </main>
+    <footer>
+
+    </footer>
+  </body>
+</html>
