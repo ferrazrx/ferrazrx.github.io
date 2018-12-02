@@ -189,6 +189,10 @@
 #application_8_ {
   animation: 4s application infinite; }
 
+#leaf_8_ {
+  animation: 8s leaf infinite;
+  transform-origin: 22% 64%; }
+
 @keyframes leaf {
   0% {
     transform: rotate(0deg); }
