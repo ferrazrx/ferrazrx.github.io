@@ -87,6 +87,14 @@
   text-decoration: none;
   color: #FEA600; }
 
+.action{
+  background-color: #3A9BFC;
+  color: #FFF;
+  font-weight: 700;
+  font-size: 1.2em; 
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+  padding: 1em;
+}
 .mark {
   display: none;
   padding: 0;
