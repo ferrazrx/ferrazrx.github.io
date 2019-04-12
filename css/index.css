@@ -1,4 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Palanquin:100,200,300,400,500,600,700");
+body{
+  overflow-x: hidden;
+}
 *, p, h1, h2, h3, h4, h5, h6 {
   font-family: 'Palanquin', sans-serif; }
 
